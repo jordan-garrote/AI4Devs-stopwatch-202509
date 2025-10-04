@@ -1,13 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timer and Countdown</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronómetro & Cuenta Regresiva</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1>Timer and Countdown</h1>
-<script src="script.js"></script>
+  <header class="app-header">
+    <h1>⏱️ Tiempo Pro</h1>
+    <p class="subtitle">Elige una opción para comenzar</p>
+  </header>
+
+  <main class="container">
+    <!-- Mode Selector -->
+    <section class="mode-selector" id="modeSelector" aria-label="Selector de modo">
+      <button class="card" data-mode="stopwatch" aria-label="Elegir Cronómetro">
+        <div class="card-icon">⏱️</div>
+        <div class="card-content">
+          <h2>Cronómetro</h2>
+          <p>Mide el tiempo con precisión. Iniciar / Pausar / Continuar / Limpiar.</p>
+        </div>
+      </button>
+
+      <button class="card" data-mode="countdown" aria-label="Elegir Cuenta Regresiva">
+        <div class="card-icon">⏳</div>
+        <div class="card-content">
+          <h2>Cuenta atrás</h2>
+          <p>Configura un tiempo de inicio y cuenta hasta 0. Confirmar / Iniciar / Pausar / Continuar / Limpiar.</p>
+        </div>
+      </button>
+    </section>
+
+    <!-- Panels -->
+    <section class="panel hidden" id="stopwatchPanel" aria-labelledby="stopwatchTitle">
+      <button class="back-btn" id="backFromStopwatch" aria-label="Volver al selector">← Volver</button>
+      <h2 id="stopwatchTitle" class="panel-title">Cronómetro</h2>
+
+      <div class="display" id="stopwatchDisplay" aria-live="polite" aria-atomic="true">00:00:00.00</div>
+
+      <div class="controls">
+        <button class="btn primary" id="swStartBtn">Iniciar</button>
+        <button class="btn warning" id="swPauseBtn" disabled>Pausar</button>
+        <button class="btn success" id="swResumeBtn" disabled>Continuar</button>
+        <button class="btn ghost" id="swResetBtn" disabled>Limpiar</button>
+      </div>
+    </section>
+
+    <section class="panel hidden" id="countdownPanel" aria-labelledby="countdownTitle">
+      <button class="back-btn" id="backFromCountdown" aria-label="Volver al selector">← Volver</button>
+      <h2 id="countdownTitle" class="panel-title">Cuenta atrás</h2>
+
+      <div class="display" id="countdownDisplay" aria-live="polite" aria-atomic="true">00:00:00</div>
+
+      <div class="setup" id="countdownSetup" aria-label="Configuración de cuenta regresiva">
+        <div class="number-inputs">
+          <div class="num-field">
+            <label for="cdHours">Horas</label>
+            <div class="spin">
+              <button class="spin-btn" data-spin="up" data-target="cdHours" aria-label="Aumentar horas">▲</button>
+              <input id="cdHours" type="number" min="0" max="99" value="0" inputmode="numeric" />
+              <button class="spin-btn" data-spin="down" data-target="cdHours" aria-label="Disminuir horas">▼</button>
+            </div>
+          </div>
+          <div class="num-field">
+            <label for="cdMinutes">Minutos</label>
+            <div class="spin">
+              <button class="spin-btn" data-spin="up" data-target="cdMinutes" aria-label="Aumentar minutos">▲</button>
+              <input id="cdMinutes" type="number" min="0" max="59" value="0" inputmode="numeric" />
+              <button class="spin-btn" data-spin="down" data-target="cdMinutes" aria-label="Disminuir minutos">▼</button>
+            </div>
+          </div>
+          <div class="num-field">
+            <label for="cdSeconds">Segundos</label>
+            <div class="spin">
+              <button class="spin-btn" data-spin="up" data-target="cdSeconds" aria-label="Aumentar segundos">▲</button>
+              <input id="cdSeconds" type="number" min="0" max="59" value="0" inputmode="numeric" />
+              <button class="spin-btn" data-spin="down" data-target="cdSeconds" aria-label="Disminuir segundos">▼</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="setup-actions">
+          <button class="btn primary" id="cdConfirmBtn">Confirmar</button>
+          <button class="btn ghost" id="cdClearSetupBtn">Limpiar</button>
+        </div>
+      </div>
+
+      <div class="controls hidden" id="countdownControls">
+        <button class="btn primary" id="cdStartBtn" disabled>Iniciar</button>
+        <button class="btn warning" id="cdPauseBtn" disabled>Pausar</button>
+        <button class="btn success" id="cdResumeBtn" disabled>Continuar</button>
+        <button class="btn ghost" id="cdResetBtn" disabled>Limpiar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>Hecho con ♥ ChatGPT por Jordan Garrote — UX/UI limpio y moderno</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
