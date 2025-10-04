@@ -2,7 +2,7 @@ Prompt Utilizado en ChatGPT=
 
 'Estoy realizando un ejercicio, el cual consiste en una página web con 2 funcionalidades clave, un cronómetro y una cuenta atrás. Se debe utilizar html y js para lograrlo, el sistema debe mostrar las 2 opciones para que el usuario elija lo que desea realizar clickeando alguna, en caso de elegir el cronómetro debe aparecer el display(reloj digital cronómetro) y botones para iniciar/pausar/continuar y limpiar el contador. Para la opción de la 'cuenta atrás' o cuenta regresiva, debe aparecer muy similar, el display, luego una sección con los números para establecer el punto de partida de la cuenta regresiva, luego un botón para confirmar, botón para limpiar, luego de que se confirme el punto de partida, deben mostrarse los botones Iniciar/pausar/continuar y el botón limpiar. Todo esto debe ser un cronómetro completamente y cuenta regresiva completamente funcional, con todos sus botones operativos de acuerdo a su funcionalidad. Debes crear un diseño moderno, profesional, entendible, con buen UX UI. entrega los resultados en los archivos html, js y css'
 
-Resultado =
+Resultado entregado por Chat GPT=
 
 '¡Listo! Te dejé un proyecto completo con las 3 capas separadas (HTML, CSS y JS) que cumple con todo lo que pediste: selector de modo, cronómetro con iniciar/pausar/continuar/limpiar, y cuenta atrás con configuración (horas/minutos/segundos), confirmar, iniciar/pausar/continuar/limpiar, diseño moderno y UX clara.
 
